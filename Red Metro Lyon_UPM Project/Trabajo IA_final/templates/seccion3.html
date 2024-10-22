@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ruta</title>
+    <style>
+        .imagen {
+          float: center;
+        }
+        .eleccion {
+           font-size: 25px;
+           font-family: 'Cambria', sans-serif;
+           text-align: center;
+           color:#273746
+       }
+       .tiempo{
+           font-size: 20px;
+           font-family: 'Cambria', sans-serif;
+           text-align: center;
+           color:#2C3E50
+       }
+       .distancia{
+           font-size: 20px;
+           font-family: 'Cambria', sans-serif;
+           text-align: center;
+           color:#2C3E50
+       }
+        .corto{
+           font-size: 20px;
+           font-family: 'Cambria', sans-serif;
+           text-align: center;
+           color:#566573
+        }
+        .completo{
+           font-size: 20px;
+           font-family: 'Cambria', sans-serif;
+           text-align: center;
+           color:#566573
+        }
+        .reseña {
+           font-size: 15px;
+           font-family: 'Cambria', sans-serif;
+           text-align: center;
+           color:#273746
+       }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/imagen1.png') }}" width="1000" height="700" class="imagen">
+    <div class="eleccion">
+        <p>{{ texto }}</p>
+    </div>
+    <div class="tiempo">
+        <p>Tiempo estimado: {{ tiempo }} minutos</p>
+    </div>
+    <div class="distancia">
+    <p>Distancia estimada: {{ distancia }} km</p>
+    </div>
+    <div class="corto">
+        <p>Camino más corto:{{ ruta }}</p>
+    </div>
+    <div class="completo">
+        <p>Camino completo: {{ camino }}</p>
+    </div>
+    <form method="POST" action="{{ url_for('redireccionar') }}" class="container">
+     
+        <input type="hidden" id="estacion_origen" name="estacion_origen"  value="{{estacion_origen}}">
+      
+        <input type="hidden" id="estacion_destino" name="estacion_destino"   value="{{estacion_destino}}">
+       
+        <input type="hidden" id="hora" name="hora"  value="{{hora}}">
+        <input type="hidden" id="metodo" name="metodo" value="d">
+       
+        
+         <input type="submit" value="Calcular por distancia">
+     </form>
+    <div class="reseña">
+        <p>DEJA UNA RESEÑA!!!</p>
+    </div>
+    
+</body>
+</html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Metro Lyon</title>
+    <style>
+        .container {
+          text-align: center;
+          font-size: 25px;
+        }
+        .imagen {
+          float: center;
+          margin-right: 50px;
+        }
+        .mi_boton {
+            background-color: black; /* Color de fondo */
+            color: white; /* Color del texto */
+            border: none; /* Eliminar borde */
+            padding: 10px 20px; /* Ajustar el relleno */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .contenedor {
+          display: flex;
+          justify-content: space-between;
+      }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/cabecera.png') }}" class="imagen">
+    <p class="container">Explora la ciudad de Lyon de una manera rápida y fácil con nuestro mapa de la red de metro.</p>
+    <p class="container">Ingresa o selecciona la estación de origen y destino y descubre la mejor ruta para ti.</p>
+    <div class="contenedor">
+        <img src="{{ url_for('static', filename='images/mapa_metro_lyon.jpg') }}" width="886" height="666" usemap="#metroMap" id="metroImage" alt="Mapa del Metro de Lyon">
+        <img src="{{ url_for('static', filename='images/nombres.png') }}" width="600" height="800">
+    </div>
+    <form method="POST" action="{{ url_for('redireccionar') }}" class="container">
+       <label for="estacion_origen">Estación Origen:</label>
+       <input type="text" id="estacion_origen" name="estacion_origen"  required>
+       <br>
+       <label for="estacion_destino">Estación Destino:</label>
+       <input type="text" id="estacion_destino" name="estacion_destino"  required>
+       <br>
+       <label for="hora">Hora:</label>
+       <input type="time" id="hora" name="hora" required>
+       <br>
+       <input type="hidden" id="metodo" name="metodo" value="t">
+       <button id="limpiarBoton">Limpiar Campos</button>
+       <br>
+        <input type="submit" value="Enviar">
+    </form>
+    <form method="POST" action="{{ url_for('seccion2') }}" class="mi_boton">
+       <input type="submit" value="Mapa interactivo del metro de Lyon">
+    </form>
+    <form method="POST" action="{{ url_for('seccion1') }}" class="mi_boton">
+       <input type="submit" value="Más información sobre el metro de Lyon">
+    </form>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

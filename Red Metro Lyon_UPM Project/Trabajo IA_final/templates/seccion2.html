@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa interactivo</title>
+    <style>
+        .imagen {
+          float: center;
+          margin-right: 50px;
+        }
+        .mapa {
+          float: center;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/cabecera1.png') }}" class="imagen">
+    <iframe src="{{ url_for('static', filename='mapa/mapa_interactivo.html') }}" width="1660" height="500" frameborder="0" class="mapa"></iframe>
+</body>
+</html>

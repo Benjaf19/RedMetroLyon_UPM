@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa del Metro de Lyon</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <img src="{{ url_for('static', filename='images/mapa_metro_lyon.jpg') }}" usemap="#metroMap" id="metroImage" alt="Mapa del Metro de Lyon" />
+
+  
+  <label for="ida">Estación de Ida:</label>
+  <input type="text" id="ida" >
+
+  
+  <label for="destino">Estación de Destino:</label>
+  <input type="text" id="destino" >
+
+  <button id="limpiarBoton">Limpiar Campos</button>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

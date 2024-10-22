@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Más información</title>
+    <style>
+        .imagen {
+          float: center;
+          margin-left: 250px;
+          width:"500";
+        }
+        .imagen1 {
+          float: center;
+          margin-left: 240px;
+          width:500";
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/sub1.png') }}" class="imagen">
+    <img src="{{ url_for('static', filename='images/sub2.png') }}" class="imagen1">
+    <img src="{{ url_for('static', filename='images/sub3.png') }}" class="imagen1">
+</body>
+</html>
